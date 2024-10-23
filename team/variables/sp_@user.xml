@@ -1,0 +1,3 @@
+<variable-file delimiters=";" filename="variables/Users.txt" name="sp_User" offset="1" order="1" policy="5" range="1" uid="a3d7f365-8dd3-4b74-b729-9e867b35a17a" useFirstLine="true" whenOutOfValues="CYCLE_VALUES">
+<column name="Users" number="0"/>
+</variable-file>

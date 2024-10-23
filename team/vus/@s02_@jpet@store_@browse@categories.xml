@@ -1,0 +1,34 @@
+<virtual-user errorPolicy="DO_NOTHING"
+    failedAssertionPolicy="DO_NOTHING" slaProfileEnabled="false"
+    type="LEGACY" uid="S02_JpetStore_BrowseCategories">
+    <init-container element-number="1" execution-type="0" pacingEnd="0"
+        pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+        slaProfileEnabled="false" weightsEnabled="false">
+        <description>Elements executed once when the Virtual User starts.</description>
+    </init-container>
+    <actions-container clearUserIterationDataMode="AUTO"
+        element-number="1" execution-type="0" pacingEnd="0"
+        pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+        slaProfileEnabled="false" weightsEnabled="false">
+        <description>Elements repeated until the Virtual User stops.</description>
+        <weighted-embedded-action uid="b92a8506-d3d0-426f-96ac-d38015d752fd"/>
+        <weighted-embedded-action uid="a951320c-208f-41e2-8326-8da0655db184"/>
+        <weighted-embedded-action uid="c6db6e33-1753-47be-8f4e-8239e437d013"/>
+        <weighted-embedded-action uid="ac76a725-12be-49af-a092-963d0584512f"/>
+        <weighted-embedded-action uid="11b261cd-84f0-4e8c-b50a-e139ecabee60"/>
+        <weighted-embedded-action uid="2a58013e-eeb2-40e3-951d-cb7c4c362c33"/>
+        <weighted-embedded-action uid="08ee9790-1fc1-4793-ac02-7a6e70dc53ed"/>
+        <weighted-embedded-action uid="2cd32b01-d264-42bc-83f2-af8671ebcab6"/>
+        <weighted-embedded-action uid="56631c15-c253-4c43-a84e-438097f0168b"/>
+        <weighted-embedded-action uid="f3e960e9-4077-4621-be3e-d9c73ca5d231"/>
+    </actions-container>
+    <end-container element-number="1" execution-type="0" pacingEnd="0"
+        pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+        slaProfileEnabled="false" weightsEnabled="false">
+        <description>Elements executed before the Virtual User stops.</description>
+    </end-container>
+    <extraJsonData><![CDATA[{"browserRecordedRequestList":[]}]]></extraJsonData>
+    <thinktime-policy thinkTimeMode="MODE_SIMPLE_THINK_TIME"
+        thinktimeFactorValue="100" thinktimePolicy="1"
+        thinktimeRangeValue="0" thinktimeValue="3000"/>
+</virtual-user>

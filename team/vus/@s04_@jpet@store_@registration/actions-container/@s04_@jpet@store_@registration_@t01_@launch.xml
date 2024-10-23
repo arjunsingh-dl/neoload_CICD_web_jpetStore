@@ -1,0 +1,6 @@
+<basic-logical-action-container element-number="1" execution-type="0"
+    name="S04_JpetStore_Registration_T01_Launch" pacingEnd="0"
+    pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+    slaProfileEnabled="false" uid="c07915f6-f0cd-4f0b-a9e9-228336275440" weightsEnabled="false">
+    <weighted-embedded-action uid="e2bdba3d-1403-4050-972d-75ddf7ccfc99"/>
+</basic-logical-action-container>

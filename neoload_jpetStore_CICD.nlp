@@ -1,0 +1,19 @@
+# Project description file
+
+project.name=neoload_jpetStore_CICD
+project.version=8.10
+project.original.version=8.10
+product.name=NeoLoad
+product.original.name=NeoLoad
+ssh.trustUnknownHosts.MONITORS=false
+monitor.tls.insecure=false
+product.original.version=2024.2.0
+project.workspace=5e3acde2e860a132744ca916
+project.test-settings=6f475dfb-d451-4cca-be1c-fa206ebbf77e
+project.test-settings-name=New
+project.is-open-test-settings-after-upload=true
+project.id=988eb456-ca40-48f2-9b0b-1c1d0ce4b35d
+project.config.path=config.zip
+project.config.storage=ZIP
+team.server.enabled=true
+team.server.project=arjunsingh-dl/neoload_CICD_web_jpetStore

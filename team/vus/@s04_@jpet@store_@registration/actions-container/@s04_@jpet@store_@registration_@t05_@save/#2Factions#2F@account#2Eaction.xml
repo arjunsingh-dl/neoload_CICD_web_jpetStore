@@ -1,0 +1,140 @@
+<http-page executeResourcesDynamically="false"
+    forceEncodingForDynamicResources="false"
+    name="/actions/Account.action" playRequestsSequentially="false"
+    recordedArtifactZipFileName="team/vus/@s04_@jpet@store_@registration/%resources%/recorded-artifacts/bd4e76e6-87b0-4760-9058-4299aaa1f44b.zip"
+    slaProfileEnabled="false" thinkTime="5673"
+    thinkTimeMode="MODE_SIMPLE_THINK_TIME" thinkTimeRangeEnd=""
+    thinkTimeRangeStart="" uid="bd4e76e6-87b0-4760-9058-4299aaa1f44b">
+    <embedded-action>91077d62-3630-4c25-9778-7dc1cbb9317b</embedded-action>
+    <embedded-action>ca6b1574-a1a2-4be1-8f48-c16e34db5af8</embedded-action>
+    <screenshotFileDescription>recorded-screenshots/sc_462c7b57-22a9-43f7-ad9a-108f6e02992d.jpg</screenshotFileDescription>
+</http-page>
+<http-action actionType="1" extractorInjectPathPolicy="2"
+    extractorPathPolicy="1" followRedirects="false"
+    generatedByClient="false" linkExtractorSeveralMatchOccurrence="1"
+    linkExtractorSeveralMatchPolicy="1" linkExtractorType="6"
+    method="POST" name="/actions/Account.action"
+    path="/actions/Account.action" postCharset="iso-8859-1" postType="1"
+    recordedArtifactZipFileName="team/vus/@s04_@jpet@store_@registration/%resources%/recorded-artifacts/bd4e76e6-87b0-4760-9058-4299aaa1f44b.zip"
+    recordedResponseCode="302" responseSize="0"
+    serverUid="petstore.octoperf.com" slaProfileEnabled="false"
+    uid="91077d62-3630-4c25-9778-7dc1cbb9317b" useKeepAlive="false">
+    <binaryPostContentBase64><![CDATA[dXNlcm5hbWU9YWRtaW5EZWwwMSZwYXNzd29yZD0ke0F1dG9QYXNzd29yZF8yfSZyZXBlYXRlZFBhc3N3b3JkPSR7QXV0b1Bhc3N3b3JkXzN9JmFjY291bnQuZmlyc3ROYW1lPWFiYyZhY2NvdW50Lmxhc3ROYW1lPWFiYyZhY2NvdW50LmVtYWlsPWFueXRoaW5nLmNvbSZhY2NvdW50LnBob25lPTA5MDkwOTA5MDkmYWNjb3VudC5hZGRyZXNzMT14eXomYWNjb3VudC5hZGRyZXNzMj14eXomYWNjb3VudC5jaXR5PWFueXRoaW5nJmFjY291bnQuc3RhdGU9YW55JmFjY291bnQuemlwPTEyMzQ1JmFjY291bnQuY291bnRyeT1JbmRpYSZhY2NvdW50Lmxhbmd1YWdlUHJlZmVyZW5jZT1lbmdsaXNoJmFjY291bnQuZmF2b3VyaXRlQ2F0ZWdvcnlJZD1GSVNIJm5ld0FjY291bnQ9U2F2ZStBY2NvdW50K0luZm9ybWF0aW9uJl9zb3VyY2VQYWdlPXJyUUVlVFJkSXVONFIyUVFuUGJMNThYclV0b3EtRXB3N290MGdVU3ZtMU1XSl93eW1mMGl1V0pTcmIyRFhFLWFCTk9FR1pyTEw0V2NsRG1zY2l1dFRWSXRaOXdCdHM1LWZ2cElDUXlSUEpFJTNEJl9fZnA9dE1nVGFtanNiWnBMeW1oeXlNZ3lGN3RySG9FSjdXSG8tTkxuZXRjLTFOYlBZZnNrSzdFSVJyYmtsdzZLbE9LYUZrOURyNmw4QUh1cnZ6Ml9BVFNKN3p5MlA0NjdtamctRURvTm5PazJ4Q3pNd2ktSEt3YTBNeFNGRzB5d052UGNhWC1BZHhOam9sRWFLcEs2SGdmVzIxUEtOMnBqaHVKMWR4VWdscWgxVndkS2QzNC14RTlxTjU1WnlGd1hTTkF6]]></binaryPostContentBase64>
+    <responsePageFileDescription>recorded-responses/res_ce272018-11b7-491d-bb3a-b37d11448301</responsePageFileDescription>
+    <requestContentFileDescription>recorded-requests/req_ce272018-11b7-491d-bb3a-b37d11448301.txt</requestContentFileDescription>
+    <parameter encodeName="true" encodeValue="true" name="username"
+        recordRawValue="adminDel01" separator="="
+        value="${sp_regUser.Users}${sp_regUsersCounter}" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="password"
+        recordRawValue="${AutoPassword_2}" separator="="
+        value="${AutoPassword_2}" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="repeatedPassword" recordRawValue="${AutoPassword_3}"
+        separator="=" value="${AutoPassword_3}" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.firstName" recordRawValue="abc" separator="="
+        value="abc" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.lastName" recordRawValue="abc" separator="="
+        value="abc" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="account.email"
+        recordRawValue="anything.com" separator="=" value="anything.com" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="account.phone"
+        recordRawValue="0909090909" separator="=" value="0909090909" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.address1" recordRawValue="xyz" separator="="
+        value="xyz" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.address2" recordRawValue="xyz" separator="="
+        value="xyz" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="account.city"
+        recordRawValue="anything" separator="=" value="anything" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="account.state"
+        recordRawValue="any" separator="=" value="any" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="account.zip"
+        recordRawValue="12345" separator="=" value="12345" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.country" recordRawValue="India" separator="="
+        value="India" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.languagePreference" recordRawValue="english"
+        separator="=" value="english" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true"
+        name="account.favouriteCategoryId" recordRawValue="FISH"
+        separator="=" value="FISH" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="newAccount"
+        recordRawValue="Save+Account+Information" separator="="
+        value="Save Account Information" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="_sourcePage"
+        recordRawValue="rrQEeTRdIuN4R2QQnPbL58XrUtoq-Epw7ot0gUSvm1MWJ_wymf0iuWJSrb2DXE-aBNOEGZrLL4WclDmsciutTVItZ9wBts5-fvpICQyRPJE%3D"
+        separator="="
+        value="rrQEeTRdIuN4R2QQnPbL58XrUtoq-Epw7ot0gUSvm1MWJ_wymf0iuWJSrb2DXE-aBNOEGZrLL4WclDmsciutTVItZ9wBts5-fvpICQyRPJE=" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="__fp"
+        recordRawValue="tMgTamjsbZpLymhyyMgyF7trHoEJ7WHo-NLnetc-1NbPYfskK7EIRrbklw6KlOKaFk9Dr6l8AHurvz2_ATSJ7zy2P467mjg-EDoNnOk2xCzMwi-HKwa0MxSFG0ywNvPcaX-AdxNjolEaKpK6HgfW21PKN2pjhuJ1dxUglqh1VwdKd34-xE9qN55ZyFwXSNAz"
+        separator="="
+        value="tMgTamjsbZpLymhyyMgyF7trHoEJ7WHo-NLnetc-1NbPYfskK7EIRrbklw6KlOKaFk9Dr6l8AHurvz2_ATSJ7zy2P467mjg-EDoNnOk2xCzMwi-HKwa0MxSFG0ywNvPcaX-AdxNjolEaKpK6HgfW21PKN2pjhuJ1dxUglqh1VwdKd34-xE9qN55ZyFwXSNAz" valueMode="USE_VALUE"/>
+    <header name="sec-fetch-mode" value="navigate"/>
+    <header name="referer" value="https://petstore.octoperf.com/actions/Account.action?newAccountForm="/>
+    <header name="sec-fetch-site" value="same-origin"/>
+    <header name="cookie" value="JSESSIONID=DC93841E9CF5CAFF8A5CC65310FD6CA2"/>
+    <header name="accept-language" value="en-US,en;q=0.9,en-IN;q=0.8"/>
+    <header name="origin" value="https://petstore.octoperf.com"/>
+    <header name="priority" value="u=0, i"/>
+    <header name="sec-fetch-user" value="?1"/>
+    <header name="accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"/>
+    <header name="sec-ch-ua" value="&quot;Not)A;Brand&quot;;v=&quot;99&quot;, &quot;Microsoft Edge&quot;;v=&quot;127&quot;, &quot;Chromium&quot;;v=&quot;127&quot;"/>
+    <header name="sec-ch-ua-mobile" value="?0"/>
+    <header name="sec-ch-ua-platform" value="&quot;Windows&quot;"/>
+    <header name="upgrade-insecure-requests" value="1"/>
+    <header name="content-type" value="application/x-www-form-urlencoded"/>
+    <header name="cache-control" value="max-age=0"/>
+    <header name="accept-encoding" value="gzip, deflate, br, zstd"/>
+    <header name="sec-fetch-dest" value="document"/>
+    <header name="user-agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0"/>
+    <responseHeaders>HTTP/2.0 302&#xd;
+date: Tue, 06 Aug 2024 04:49:30 GMT&#xd;
+Content-Length: 0&#xd;
+location: /actions/Catalog.action&#xd;
+content-language: en-US&#xd;
+strict-transport-security: max-age=31536000; includeSubDomains; preload</responseHeaders>
+    <record-html-infos extractorRegExp="false" htmlType="0"/>
+</http-action>
+<http-action actionType="2" contentType="text/html;charset=UTF-8"
+    extractorInjectPathPolicy="2" extractorPathPolicy="1"
+    followRedirects="false" generatedByClient="false"
+    linkExtractorSeveralMatchOccurrence="1"
+    linkExtractorSeveralMatchPolicy="1" linkExtractorType="6"
+    method="GET" name="/actions/Catalog.action"
+    path="/actions/Catalog.action" postType="6"
+    recordedArtifactZipFileName="team/vus/@s04_@jpet@store_@registration/%resources%/recorded-artifacts/bd4e76e6-87b0-4760-9058-4299aaa1f44b.zip"
+    recordedResponseCode="200"
+    refererUid="91077d62-3630-4c25-9778-7dc1cbb9317b"
+    responseSize="4736" serverUid="petstore.octoperf.com"
+    slaProfileEnabled="false" uid="ca6b1574-a1a2-4be1-8f48-c16e34db5af8" useKeepAlive="false">
+    <responsePageFileDescription>recorded-responses/res_03d36533-d265-499e-b599-b2a7ac7416f1.html</responsePageFileDescription>
+    <requestContentFileDescription>recorded-requests/req_03d36533-d265-499e-b599-b2a7ac7416f1.txt</requestContentFileDescription>
+    <header name="sec-fetch-mode" value="navigate"/>
+    <header name="referer" value="https://petstore.octoperf.com/actions/Account.action?newAccountForm="/>
+    <header name="sec-fetch-site" value="same-origin"/>
+    <header name="cookie" value="JSESSIONID=DC93841E9CF5CAFF8A5CC65310FD6CA2"/>
+    <header name="accept-language" value="en-US,en;q=0.9,en-IN;q=0.8"/>
+    <header name="priority" value="u=0, i"/>
+    <header name="sec-fetch-user" value="?1"/>
+    <header name="accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"/>
+    <header name="sec-ch-ua" value="&quot;Not)A;Brand&quot;;v=&quot;99&quot;, &quot;Microsoft Edge&quot;;v=&quot;127&quot;, &quot;Chromium&quot;;v=&quot;127&quot;"/>
+    <header name="sec-ch-ua-mobile" value="?0"/>
+    <header name="sec-ch-ua-platform" value="&quot;Windows&quot;"/>
+    <header name="upgrade-insecure-requests" value="1"/>
+    <header name="cache-control" value="max-age=0"/>
+    <header name="accept-encoding" value="gzip, deflate, br, zstd"/>
+    <header name="sec-fetch-dest" value="document"/>
+    <header name="user-agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0"/>
+    <responseHeaders>HTTP/2.0 200&#xd;
+date: Tue, 06 Aug 2024 04:49:30 GMT&#xd;
+content-type: text/html;charset=UTF-8&#xd;
+vary: Accept-Encoding&#xd;
+content-language: en-US&#xd;
+strict-transport-security: max-age=31536000; includeSubDomains; preload&#xd;
+content-encoding: gzip</responseHeaders>
+    <record-html-infos extractorRegExp="false" htmlType="0"/>
+</http-action>

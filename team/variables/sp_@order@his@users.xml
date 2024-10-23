@@ -1,0 +1,4 @@
+<variable-list name="sp_OrderHisUsers" offset="1" order="1" policy="5" range="1" uid="1eea4c68-4bbe-4a9d-8599-351dc2c144bb" whenOutOfValues="CYCLE_VALUES">
+<column name="orderUsers" number="0"/>
+<values><![CDATA[rO0ABXVyABRbW0xqYXZhLmxhbmcuU3RyaW5nOzJNCa2EMuRXAgAAeHAAAAACdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAXQACURlbG9pdHRlMXVxAH4AAgAAAAF0AAlEZWxvaXR0ZTI=]]></values>
+</variable-list>

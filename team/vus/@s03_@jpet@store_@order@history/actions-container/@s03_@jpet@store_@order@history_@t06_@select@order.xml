@@ -1,0 +1,6 @@
+<basic-logical-action-container element-number="1" execution-type="0"
+    name="S03_JpetStore_OrderHistory_T06_SelectOrder" pacingEnd="0"
+    pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+    slaProfileEnabled="false" uid="ffd57db0-eea5-44fa-baa2-fe19eefa4418" weightsEnabled="false">
+    <weighted-embedded-action uid="4583a544-2cd2-4233-ab59-cdc089953a2d"/>
+</basic-logical-action-container>

@@ -1,0 +1,6 @@
+<basic-logical-action-container element-number="1" execution-type="0"
+    name="S03_JpetStore_OrderHistory_T08_SignOut" pacingEnd="0"
+    pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+    slaProfileEnabled="false" uid="a833ccea-7f98-42c5-9164-b844c1a8a711" weightsEnabled="false">
+    <weighted-embedded-action uid="f4825a88-2bef-4180-aa79-8df1c17bc76f"/>
+</basic-logical-action-container>

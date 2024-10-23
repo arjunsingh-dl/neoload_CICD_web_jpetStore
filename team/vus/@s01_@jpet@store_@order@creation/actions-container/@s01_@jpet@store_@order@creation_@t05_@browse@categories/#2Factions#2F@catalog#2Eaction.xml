@@ -1,0 +1,64 @@
+<http-page executeResourcesDynamically="false"
+    forceEncodingForDynamicResources="false"
+    name="/actions/Catalog.action" playRequestsSequentially="false"
+    recordedArtifactZipFileName="team/vus/@s01_@jpet@store_@order@creation/%resources%/recorded-artifacts/7fa7e3aa-d7f7-4087-b16e-4ae6b2883a2d.zip"
+    slaProfileEnabled="false" thinkTime="9883"
+    thinkTimeMode="MODE_SIMPLE_THINK_TIME" thinkTimeRangeEnd=""
+    thinkTimeRangeStart="" uid="7fa7e3aa-d7f7-4087-b16e-4ae6b2883a2d">
+    <embedded-action>6019f014-0cb6-43e4-82fb-14284aa0c58f</embedded-action>
+    <screenshotFileDescription>recorded-screenshots/sc_63903432-933d-4d1c-bded-1e472136b10c.jpg</screenshotFileDescription>
+</http-page>
+<http-action actionType="1" contentType="text/html;charset=UTF-8"
+    extractorInjectPathPolicy="2" extractorPathPolicy="1"
+    followRedirects="false" generatedByClient="false"
+    linkExtractorSeveralMatchOccurrence="1"
+    linkExtractorSeveralMatchPolicy="1" linkExtractorType="6"
+    method="GET" name="/actions/Catalog.action"
+    path="/actions/Catalog.action" postType="6"
+    recordedArtifactZipFileName="team/vus/@s01_@jpet@store_@order@creation/%resources%/recorded-artifacts/7fa7e3aa-d7f7-4087-b16e-4ae6b2883a2d.zip"
+    recordedResponseCode="200" recordedResponseTime="163"
+    responseSize="3828" serverUid="petstore.octoperf.com"
+    slaProfileEnabled="false" uid="6019f014-0cb6-43e4-82fb-14284aa0c58f" useKeepAlive="false">
+    <responsePageFileDescription>recorded-responses/res_cust_2f6e1125-dac3-4399-b478-c796dcca17dc.html</responsePageFileDescription>
+    <requestContentFileDescription>recorded-requests/req_cust_6fc6a0a0-510f-43c9-857d-8570c6e8702a.txt</requestContentFileDescription>
+    <variable-extractor assertionOnNoMatch="true"
+        defaultValue="&lt;NOT FOUND>" displayMode="0"
+        endsWithSimple="&quot;>" extractFromVarNameAdv=""
+        extractFromVarNameSimple="" extractType="0" extractTypeAdv="0"
+        extractTypeSimple="0" matchNumber="-1" matchNumberAdv="1"
+        matchNumberSimple="-1" name="dp_product"
+        refererUid="6fc6a0a0-510f-43c9-857d-8570c6e8702a"
+        regExp="mp;productId=(.*?)&quot;>" regExpAdv=""
+        setDefaultValue="true" startsWithSimple="mp;productId="
+        template="$1$" templateAdv="$1$"
+        uid="8bb87b6e-5d76-4aa7-b69d-fcf8a7edf3dc" xpath="">
+        <variable-extractor-group extract="true" occurs="1" pattern="" type="4"/>
+    </variable-extractor>
+    <parameter encodeName="true" encodeValue="true" name="viewCategory"
+        recordRawValue="" separator="=" value="" valueMode="USE_VALUE"/>
+    <parameter encodeName="true" encodeValue="true" name="categoryId"
+        recordRawValue="FISH" separator="=" value="${dp_category_rand}" valueMode="USE_VALUE"/>
+    <header name="sec-fetch-mode" value="navigate"/>
+    <header name="referer" value="https://petstore.octoperf.com/actions/Catalog.action"/>
+    <header name="sec-fetch-site" value="same-origin"/>
+    <header name="cookie" value="JSESSIONID=546E37423D6D0D8EFD7E28DEB400A57B"/>
+    <header name="accept-language" value="en-US,en;q=0.9,en-IN;q=0.8"/>
+    <header name="priority" value="u=0, i"/>
+    <header name="sec-fetch-user" value="?1"/>
+    <header name="accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"/>
+    <header name="sec-ch-ua" value="&quot;Not)A;Brand&quot;;v=&quot;99&quot;, &quot;Microsoft Edge&quot;;v=&quot;127&quot;, &quot;Chromium&quot;;v=&quot;127&quot;"/>
+    <header name="sec-ch-ua-mobile" value="?0"/>
+    <header name="sec-ch-ua-platform" value="&quot;Windows&quot;"/>
+    <header name="upgrade-insecure-requests" value="1"/>
+    <header name="accept-encoding" value="gzip, deflate, br, zstd"/>
+    <header name="sec-fetch-dest" value="document"/>
+    <header name="user-agent" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0"/>
+    <responseHeaders>HTTP/2.0 200 
+date: Tue, 06 Aug 2024 04:17:13 GMT
+content-type: text/html;charset=UTF-8
+vary: Accept-Encoding
+content-language: en-US
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+content-encoding: gzip</responseHeaders>
+    <record-html-infos extractorRegExp="false" htmlType="0"/>
+</http-action>

@@ -1,0 +1,4 @@
+<variable-list name="sp_usersCateg" offset="1" order="3" policy="5" range="1" uid="14a09973-b4dd-42fa-96ca-e7016c84a49a" whenOutOfValues="CYCLE_VALUES">
+<column name="users" number="0"/>
+<values><![CDATA[rO0ABXVyABRbW0xqYXZhLmxhbmcuU3RyaW5nOzJNCa2EMuRXAgAAeHAAAAAEdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAXQACURlbG9pdHRlN3VxAH4AAgAAAAF0AAlEZWxvaXR0ZTh1cQB+AAIAAAABdAAJRGVsb2l0dGU5dXEAfgACAAAAAXQACkRlbG9pdHRlMTA=]]></values>
+</variable-list>

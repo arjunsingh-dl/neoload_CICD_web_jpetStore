@@ -1,0 +1,6 @@
+<basic-logical-action-container element-number="1" execution-type="0"
+    name="S02_JpetStore_BrowseCategories_T04_Login" pacingEnd="0"
+    pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+    slaProfileEnabled="false" uid="08ee9790-1fc1-4793-ac02-7a6e70dc53ed" weightsEnabled="false">
+    <weighted-embedded-action uid="b3ca2ca6-cc8b-4ac5-9539-3f417e5b47f5"/>
+</basic-logical-action-container>
