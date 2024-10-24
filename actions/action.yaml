@@ -1,0 +1,52 @@
+name: PSL-Picking_Reads
+ 
+inputs:
+  NEOLOADWEB_TOKEN   :
+    required: true
+  ACTION:
+    required: true
+ 
+runs:
+  using: 'composite'
+  steps:
+    - name: check action
+      id: action
+      run: |
+        if [ $ACTION == 'smoke_stage' ]; then
+          echo "as_code_yml=custom-resources/yaml/stage_smoke_${{ env.NAME }}.yaml" >> $GITHUB_ENV
+          echo "scenario=scenario" >> $GITHUB_ENV
+        elif [ $ACTION == 'load_stage' ]; then
+          echo "as_code_yml=custom-resources/yaml/stage_load_${{ env.NAME }}.yaml" >> $GITHUB_ENV
+          echo "scenario=scenario" >> $GITHUB_ENV         
+        else
+          echo "no ascode"
+          echo "scenario=scenario" >> $GITHUB_ENV
+        fi
+      shell: bash
+ 
+    - name: Get current date
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      shell: bash
+ 
+    - name: execute action
+      uses: krogertechnology/perfengg_neoloadweb_cicd/actions@v1.9.0
+      env:
+        NEOLOADWEB_TOKEN: ${{ env.NEOLOADWEB_TOKEN}}
+        AS_CODE: ${{ env.as_code_yml }}
+        SCRIPT_REPO:  ${{ github.action }}
+        REPO_REF: master
+        TEST_NAME: ${{ env.NAME }}_${{ env.ACTION }}_Rel${{ env.RELEASE }}_${{ steps.date.outputs.date }}_${{ github.run_number }}
+        WEBHOOK: ${{ env.WEBHOOK }}
+      shell: bash
+ 
+    - name: Send Teams Notification
+      if: always()
+      run: |
+        if [ -z ${{ env.WEBHOOK }} ]; then 
+          echo "webhook is not set"; 
+        else
+          echo "webhook is set";
+          curl -H 'Content-Type: application/json' -d '{"text": "<b>Performance Test Result</b><br><br>Test Status: ${{ steps.Status.outputs.TestStatus || steps.StatusFailure.outputs.TestStatus }} <br>Repository Name:  ${{ env.SCRIPT_REPO_REFORMATTED }} <br>Workspace: ${{ env.WORKSPACE }}<br>Program: ${{ env.PROGRAM }} <br>Service: ${{ env.SERVICE }} <br>TestType: ${{ env.TESTTYPE }} <br>TriggerType: ${{ env.TRIGGERTYPE }} <br><br>Splunk Url :- http://${{ env.SPLUNK_URL }}/en-US/app/performance_test_analysis/performance_test_analysis_overview?form.time_tok.earliest=${{ steps.StartTime.outputs.sStartTime }}&form.time_tok.latest=${{ steps.EndTime.outputs.sEndTime }}&form.workspace_tok=${{ env.WORKSPACE }}&form.project_tok=${{ env.PROJECT }}&form.scenario_tok=${{ env.SCENARIO }}&form.test_tok=${{ env.TEST_NAME }}&form.category_tok=TRANSACTION&form.sla_tok=true&form.rtime_rqt=150&form.resourceName_tok=CPU%20Load&form.selected_span=60&form.selected_success=true&hideFilters=false"}' ${{ env.WEBHOOK }}
+        fi
+      shell: bash
