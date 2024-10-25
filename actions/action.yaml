@@ -30,11 +30,11 @@ runs:
       shell: bash
  
     - name: execute action
+      using: 'composite'
       env:
         NEOLOADWEB_TOKEN: ${{ env.NEOLOADWEB_TOKEN}}
         AS_CODE: ${{ env.as_code_yml }}
         SCRIPT_REPO:  ${{ github.action }}
         REPO_REF: master
         TEST_NAME: ${{ env.NAME }}_${{ env.ACTION }}_Rel${{ env.RELEASE }}_${{ steps.date.outputs.date }}_${{ github.run_number }}
-        WEBHOOK: ${{ env.WEBHOOK }}
       shell: bash
