@@ -36,3 +36,5 @@ runs:
         SCRIPT_REPO:  ${{ github.action }}
         REPO_REF: master
         TEST_NAME: ${{ env.NAME }}_${{ env.ACTION }}_Rel${{ env.RELEASE }}_${{ steps.date.outputs.date }}_${{ github.run_number }}
+        WEBHOOK: ${{ env.WEBHOOK }}
+      shell: bash
