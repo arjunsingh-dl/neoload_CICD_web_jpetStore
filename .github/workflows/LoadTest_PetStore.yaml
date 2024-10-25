@@ -1,19 +1,56 @@
 name: LoadTest_PetStore
-on: 
+on:
   workflow_dispatch:
+  #   this is comment......
+  #push:
+    #branches: [ develop ]
+ 
 jobs:
-  action_cicd:
-    environment: stage
+  test:
+    environment: STAGE
     name: LoadTest_PetStore
     runs-on: [ubuntu-latest]
-    steps: 
-    
-      - name: execute action 
-        uses: arjunsingh-dl/neoload_CICD_web_jpetStore/actions@v0.08    
+ 
+    steps:
+ 
+    - name: GetTestStartTime
+        id: StartTime
+        if: always()
+        run: |
+          echo "vStartTime=$(date +'%s000')" >> $GITHUB_OUTPUT
+          echo "sStartTime=$(date +'%s')" >> $GITHUB_OUTPUT
+ 
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+ 
+ 
+      - name: Load Test for RSS
+        uses: arjunsingh-dl/Main
         env:
-          NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN}}
-          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-          NAME: LoadTest_PetStore
-          ACTION: smoke_stage
-          RELEASE: latest
-          WEBHOOK: ${{ secrets.WEBHOOK }}
+          NEOLOADWEB_URL: 'https://neoload.saas.neotys.com/'
+          WORKSPACE: 'Default Workspace'
+          NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN }}
+          ZONEID: 'EUGGCP'
+          NUM_GENS: 1
+          SCENARIO: LoadTest_PetStore
+          AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
+          TEST: New
+          TEST_NAME: Load_jPetStore_CICD-PerfTest_${{ steps.date.outputs.date }}_${{ github.run_number }}
+ 
+      - name: Success - Test
+        id: Status
+        if: ${{ success() }}
+        run: |
+         echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
+      - name: Failure - Test
+        id: StatusFailure
+        if: ${{ failure() }}
+        run: |
+         echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
+      - name: GetTestEndTime
+        id: EndTime
+        if: always()
+        run: |
+          echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
+          echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
