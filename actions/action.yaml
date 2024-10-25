@@ -30,7 +30,7 @@ runs:
       shell: bash
  
     - name: execute action
-      using: 'composite'
+      uses: arjunsingh-dl/neoload_CICD_web_jpetStore/actions@v0.08 
       env:
         NEOLOADWEB_TOKEN: ${{ env.NEOLOADWEB_TOKEN}}
         AS_CODE: ${{ env.as_code_yml }}
