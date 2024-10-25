@@ -13,7 +13,23 @@ jobs:
  
     steps:
  
-    - name: GetTestStartTime
+      - name: Set Splunk Variables
+        env:
+          GITHUB_TRIGGER: ${{ toJson(github.event_name) }}
+          REPO_NAME: ${{ toJson(github.event.repository.name) }}
+        id: Splunk
+        if: always()
+        run: |
+          GitTrig=`echo $GITHUB_TRIGGER | tr -d '"'`
+          RepoName=`echo $REPO_NAME | tr -d '"'`
+          echo "Workspace=Retail Sales Services \n" >> $GITHUB_OUTPUT
+          echo "Program=NGPOS \n" >> $GITHUB_OUTPUT
+          echo "Service=RSS \n" >> $GITHUB_OUTPUT
+          echo "Testtype=LoadTest \n" >> $GITHUB_OUTPUT
+          echo "TriggerType=$GitTrig \n" >> $GITHUB_OUTPUT
+          echo "RepoName=$RepoName \n" >> $GITHUB_OUTPUT
+ 
+      - name: GetTestStartTime
         id: StartTime
         if: always()
         run: |
