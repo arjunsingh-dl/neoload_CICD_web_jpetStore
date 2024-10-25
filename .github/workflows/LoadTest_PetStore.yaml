@@ -42,7 +42,7 @@ jobs:
  
  
       - name: Load Test for RSS
-        uses: arjunsingh-dl/Main
+        uses: arjunsingh-dl/Main@v0.01
         env:
           NEOLOADWEB_URL: 'https://neoload.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
@@ -70,3 +70,4 @@ jobs:
         run: |
           echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
           echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
+          
