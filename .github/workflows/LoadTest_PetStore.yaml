@@ -9,7 +9,7 @@ jobs:
     steps: 
     
       - name: execute action 
-        uses: arjunsingh-dl/neoload_CICD_web_jpetStore/actions    
+        uses: arjunsingh-dl/neoload_CICD_web_jpetStore/actions@v0.08    
         env:
           NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN}}
           REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
