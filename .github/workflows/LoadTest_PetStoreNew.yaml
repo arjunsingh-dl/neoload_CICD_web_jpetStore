@@ -1,4 +1,4 @@
-name: LoadTest_PetStore
+name: LoadTest_PetStore_New
 on: 
   workflow_dispatch:
 jobs:
