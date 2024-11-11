@@ -9,8 +9,10 @@
     <screenshotFileDescription>recorded-screenshots/sc_862dc42c-bb67-4249-9512-85fbeaddaf37.jpg</screenshotFileDescription>
 </http-page>
 <http-action actionType="1" contentType="text/html;charset=utf-8"
+    eTag="W/&quot;1156-1670877034000&quot;"
     extractorInjectPathPolicy="2" extractorPathPolicy="1"
     followRedirects="false" generatedByClient="false"
+    lastModified="Mon, 12 Dec 2022 20:30:34 GMT"
     linkExtractorSeveralMatchOccurrence="1"
     linkExtractorSeveralMatchPolicy="1" linkExtractorType="6"
     method="GET" name="/favicon.ico" path="" postType="6"
