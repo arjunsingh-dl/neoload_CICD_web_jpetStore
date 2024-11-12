@@ -13,8 +13,8 @@ jobs:
  
     steps:
  
-      - name: Load Test for RSS
-        uses: arjunsingh-dl/neoload_CICD_web_jpetStore@v0.08
+      - name: Load Test for Petstore
+        uses: arjunsingh-dl/Main@v0.01
         env:
           NEOLOADWEB_URL: 'https://neoload.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
