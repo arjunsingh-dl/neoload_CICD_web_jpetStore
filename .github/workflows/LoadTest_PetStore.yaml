@@ -14,7 +14,7 @@ jobs:
     steps:
  
       - name: Load Test for Petstore
-        uses: arjunsingh-dl/Main@v0.01
+        uses: arjunsingh-dl/Main/actions@v0.01
         env:
           NEOLOADWEB_URL: 'https://neoload.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
