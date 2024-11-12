@@ -16,4 +16,3 @@ jobs:
           NAME: LoadTest_PetStore
           ACTION: smoke_stage
           RELEASE: latest
-          WEBHOOK: ${{ secrets.WEBHOOK }}
