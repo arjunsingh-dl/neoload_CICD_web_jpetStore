@@ -9,7 +9,7 @@ jobs:
   test:
     environment: STAGE
     name: LoadTest_PetStore
-    runs-on: [ubuntu-latest]
+    runs-on: [windows-latest]
  
     steps:
  
