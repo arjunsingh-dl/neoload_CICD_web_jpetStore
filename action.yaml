@@ -1,0 +1,68 @@
+name: perftest_neoloadcli
+description: 'Neoloadcli  template for performance testing'
+ 
+inputs:
+  NEOLOADWEB_URL:
+    required: true
+  WORKSPACE:
+    required: true
+  NEOLOADWEB_TOKEN:
+    required: true
+  ZONEID:
+    required: true
+  NUM_GENS:
+    required: true
+  SCENARIO:
+    required: true
+  TEST:
+    required: true
+  TEST_NAME:
+    required: true
+runs:
+  using: 'composite'
+  steps:   
+    - name: Set up Python 3.8.6
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8.6'
+    - name: download neoload
+      id: run-performance
+      run: | 
+        pip3 install neoload
+      shell: bash  
+    - name: neoload login
+      id: neoload-login
+      run: |
+        neoload login --url $NEOLOADWEB_URL --workspace '${{ env.WORKSPACE }}' --ssl-cert False $NEOLOADWEB_TOKEN
+      shell: bash  
+    - name: neoload test-setting
+      id: neoload-test-setting
+      run: |
+        neoload test-settings --zone $ZONEID --lgs $NUM_GENS --scenario '${{ env.SCENARIO }}' createorpatch '${{ env.TEST }}'
+      shell: bash
+    - name: neoload run
+      id: neoload-run
+      run: |
+        if [ -z ${AS_CODE} ]; then 
+          echo "AS_CODE is unset"; 
+          neoload run --name $TEST_NAME
+        else
+          echo "AS_CODE is set"; 
+          neoload run --as-code $AS_CODE --name '${{ env.TEST_NAME }}'
+        fi
+      shell: bash      
+    - name: neoload test-results
+      id: neoload-test-results
+      run: |
+        neoload test-results use '${{ env.TEST_NAME }}'
+      shell: bash  
+    - name: neoload junitsla
+      id: neoload-junitsla
+      run: |
+        neoload test-results junitsla
+      shell: bash  
+    - name: neoload summary
+      id: neoload-summary
+      run: |
+        neoload test-results summary
+      shell: bash  
