@@ -1,13 +1,12 @@
 name: LoadTest_PetStore
-
  
 scenarios:
-- name: LoadTest_PetStore
-  populations:
-  - name: pop_LoadTestAllScenario
-    rampup_load:
-      min_users: 2
-      max_users: 10
-      increment_users: 2
-      increment_every: 1s
-      duration: 30m
+  - name: LoadTest_PetStore
+    populations:
+      - name: pop_LoadTestAllScenario
+        rampup_load:
+          min_users: 2
+          max_users: 10
+          increment_users: 1
+          increment_every: 1s
+          duration: 30m
