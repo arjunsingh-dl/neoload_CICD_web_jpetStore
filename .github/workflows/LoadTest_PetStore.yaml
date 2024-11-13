@@ -36,7 +36,7 @@ jobs:
           SCENARIO: LoadTest_PetStore
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
           TEST: New
-          TEST_NAME: Load_jPetStore_CICD-PerfTest__${ github.run_number }
+          TEST_NAME: Load_jPetStore_CICD-PerfTest__${{ steps.date.outputs.date }}_${{ github.run_number }}
  
       - name: Success - Test
         id: Status
