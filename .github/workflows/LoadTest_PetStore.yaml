@@ -56,8 +56,3 @@ jobs:
         run: |
           echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
           echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
- 
-      - name: Splunk Observability
-        if: always()
-        run: |
-          echo "http://perftest-dash-dev.kroger.com:8000/en-US/app/performance_test_analysis/neoload_test_analysis?form.time_tok.earliest=${{ steps.StartTime.outputs.sStartTime }}&form.time_tok.latest=${{ steps.EndTime.outputs.sEndTime }}&form.workspace_tok=Retail Sales Services&form.project_tok=neoload_NGPOS_RSS_MQ&form.scenario_tok=Load_RSS_Dev_25TPS&form.test_tok=Load_NGPOS_RSS_CICD-PerfTest_${{ steps.date.outputs.date }}_${{ github.run_number }}&form.category_tok=TRANSACTION&form.sla_tok=false&form.rtime_rqt=150&form.resourceName_tok=CPU%20Load&form.selected_span=60&form.selected_success=true"
