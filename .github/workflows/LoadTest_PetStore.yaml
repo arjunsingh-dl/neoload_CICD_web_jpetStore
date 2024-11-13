@@ -13,6 +13,34 @@ jobs:
  
     steps:
  
+      - name: Set Splunk Variables
+        env:
+          GITHUB_TRIGGER: ${{ toJson(github.event_name) }}
+          REPO_NAME: ${{ toJson(github.event.repository.name) }}
+        id: Splunk
+        if: always()
+        run: |
+          GitTrig=`echo $GITHUB_TRIGGER | tr -d '"'`
+          RepoName=`echo $REPO_NAME | tr -d '"'`
+          echo "Workspace=Retail Sales Services \n" >> $GITHUB_OUTPUT
+          echo "Program=NGPOS \n" >> $GITHUB_OUTPUT
+          echo "Service=RSS \n" >> $GITHUB_OUTPUT
+          echo "Testtype=LoadTest \n" >> $GITHUB_OUTPUT
+          echo "TriggerType=$GitTrig \n" >> $GITHUB_OUTPUT
+          echo "RepoName=$RepoName \n" >> $GITHUB_OUTPUT
+ 
+      - name: GetTestStartTime
+        id: StartTime
+        if: always()
+        run: |
+          echo "vStartTime=$(date +'%s000')" >> $GITHUB_OUTPUT
+          echo "sStartTime=$(date +'%s')" >> $GITHUB_OUTPUT
+ 
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+ 
+    
       - name: Load Test for Petstore
         uses: arjunsingh-dl/Main@v0.02
         env:
@@ -24,4 +52,28 @@ jobs:
           SCENARIO: LoadTest_PetStore
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
           TEST: New
-          TEST_NAME: Load_jPetStore_CICD-PerfTest
+          TEST_NAME: Load_jPetStore_CICD-PerfTest__${{ steps.date.outputs.date }}_${{ github.run_number }}
+ 
+      - name: Success - Test
+        id: Status
+        if: ${{ success() }}
+        run: |
+          echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
+ 
+      - name: Failure - Test
+        id: StatusFailure
+        if: ${{ failure() }}
+        run: |
+          echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
+ 
+      - name: GetTestEndTime
+        id: EndTime
+        if: always()
+        run: |
+          echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
+          echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
+ 
+      - name: Splunk Observability
+        if: always()
+        run: |
+          echo "http://perftest-dash-dev.kroger.com:8000/en-US/app/performance_test_analysis/neoload_test_analysis?form.time_tok.earliest=${{ steps.StartTime.outputs.sStartTime }}&form.time_tok.latest=${{ steps.EndTime.outputs.sEndTime }}&form.workspace_tok=Retail Sales Services&form.project_tok=neoload_NGPOS_RSS_MQ&form.scenario_tok=Load_RSS_Dev_25TPS&form.test_tok=Load_NGPOS_RSS_CICD-PerfTest_${{ steps.date.outputs.date }}_${{ github.run_number }}&form.category_tok=TRANSACTION&form.sla_tok=false&form.rtime_rqt=150&form.resourceName_tok=CPU%20Load&form.selected_span=60&form.selected_success=true"
