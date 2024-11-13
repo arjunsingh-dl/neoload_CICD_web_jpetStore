@@ -31,7 +31,7 @@ jobs:
           NEOLOADWEB_URL: 'https://neoload-api.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
           NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN}}
-          ZONEID: 'EUGGCP'
+          ZONEID: 'APSAWS'
           NUM_GENS: 1
           SCENARIO: LoadTest_PetStore
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
