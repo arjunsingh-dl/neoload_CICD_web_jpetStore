@@ -28,7 +28,7 @@ jobs:
       - name: Load Test for Petstore
         uses: arjunsingh-dl/Main@v0.02
         env:
-          NEOLOADWEB_URL: 'https://neoload.saas.neotys.com/#!'
+          NEOLOADWEB_URL: 'https://neoload-api.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
           NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN}}
           ZONEID: 'EUGGCP'
