@@ -1,9 +1,7 @@
 name: LoadTest_PetStore
 on:
   workflow_dispatch:
-  #   this is comment......
-  #push:
-    #branches: [ develop ]
+  
  
 jobs:
   test:
