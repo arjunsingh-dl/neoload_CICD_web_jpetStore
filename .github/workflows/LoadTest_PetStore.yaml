@@ -22,7 +22,7 @@ jobs:
  
       - name: Get current date
         id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
  
     
       - name: Load Test for Petstore
@@ -36,7 +36,7 @@ jobs:
           SCENARIO: LoadTest_PetStore
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
           TEST: New
-          TEST_NAME: Load_CICD_jPetStore_10User_${{ steps.date.outputs.date }}_${{ github.run_number }}
+          TEST_NAME: Load_CICD_jPetStore_10User_${{ env.date }}_${{ github.run_number }}
  
       - name: Success - Test
         id: Status
