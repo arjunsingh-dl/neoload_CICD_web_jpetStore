@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
           # Fetch the latest test result from Neoload Web
-          response=$(curl -X 'GET' \'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0' \-H 'accept: application/json' \-H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}')
+          response=$(curl -X 'GET' 'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0' -H 'accept: application/json' -H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}')
           # Store the response in a file
             echo "$response" > response.json
       - name: Extract First Record ID
@@ -46,7 +46,7 @@ jobs:
           # Access the first record's id from the environment variable
           first_record_id="${{ env.Test_Result_Id }}"
           # Use the record ID in another curl command to get the link
-          response=$(curl -o /tmp/record.pdf -X 'POST' \'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report' \-H 'accept: application/pdf' \-H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}' \-H 'Content-Type: application/json' \-d '{"language": "en","timeZone": "Europe/Paris"}');
+          response=$(curl -o /tmp/record.pdf -X 'POST' 'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report' -H 'accept: application/pdf' -H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}' -H 'Content-Type: application/json' -d '{"language": "en","timeZone": "Europe/Paris"}');
           # Store the response in a file
           echo "$response" > response.json
       - name: Check Downloaded PDF

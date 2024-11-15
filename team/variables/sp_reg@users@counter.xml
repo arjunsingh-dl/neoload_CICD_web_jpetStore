@@ -1,1 +1,1 @@
-<variable-counter inc="1" max="10000" name="sp_regUsersCounter" order="1" policy="1" range="1" starting="50" uid="14101bfa-1b57-4251-a71e-54a0f48670de" whenOutOfValues="CYCLE_VALUES"/>
+<variable-counter inc="1" max="10000" name="sp_regUsersCounter" order="1" policy="1" range="1" starting="70" uid="14101bfa-1b57-4251-a71e-54a0f48670de" whenOutOfValues="CYCLE_VALUES"/>
