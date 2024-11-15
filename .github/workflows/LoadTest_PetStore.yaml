@@ -34,8 +34,8 @@ jobs:
         if: ${{ failure() }}
         run: |
           echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
-      - name: Result - Fetching
-        id: StoringResponse
+      - name: Failures - Tests
+        id: StatusFailures
           # Fetch the latest test result from Neoload Web
           response=$(curl -X 'GET' \'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0' \-H 'accept: application/json' \-H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}')
           # Store the response in a file
