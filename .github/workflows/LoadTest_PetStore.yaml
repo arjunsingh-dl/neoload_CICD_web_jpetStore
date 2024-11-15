@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
           # Fetch the latest test result from Neoload Web
-          response=$(curl -X GET "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50" -H "accept: application/json" -H "accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}")
+          response=$(curl -X 'GET' 'https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0' -H 'accept: application/json' -H 'accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}')
           # Store the response in a file
             echo "$response" > response.json
  
