@@ -11,13 +11,6 @@ jobs:
  
     steps:
  
-      - name: GetTestStartTime
-        id: StartTime
-        if: always()
-        run: |
-          echo "vStartTime=$(date +'%s000')" >> $GITHUB_OUTPUT
-          echo "sStartTime=$(date +'%s')" >> $GITHUB_OUTPUT
- 
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
@@ -47,10 +40,3 @@ jobs:
         if: ${{ failure() }}
         run: |
           echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
- 
-      - name: GetTestEndTime
-        id: EndTime
-        if: always()
-        run: |
-          echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
-          echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT

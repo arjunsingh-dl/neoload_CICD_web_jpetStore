@@ -28,13 +28,7 @@
         enabled="false" isLoopBack="false" name="wlan2">
         <!--****** LG ADDRESSES ******-->
         <lg-address enabled="false" hostname="uskolarjunksin9.us.deloitte.com">
-            <ip value="192.168.1.8"/>
-        </lg-address>
-        <lg-address enabled="false" hostname="2401:4900:1c85:6d37:6c01:547b:9b60:ad50">
-            <ip value="2401:4900:1c85:6d37:6c01:547b:9b60:ad50"/>
-        </lg-address>
-        <lg-address enabled="false" hostname="2401:4900:1c85:6d37:c3b2:16da:3b91:3340">
-            <ip value="2401:4900:1c85:6d37:c3b2:16da:3b91:3340"/>
+            <ip value="10.12.148.117"/>
         </lg-address>
         <lg-address enabled="false" hostname="fe80:0:0:0:5976:f645:5a94:29c5%wlan2">
             <ip value="fe80:0:0:0:5976:f645:5a94:29c5%wlan2"/>

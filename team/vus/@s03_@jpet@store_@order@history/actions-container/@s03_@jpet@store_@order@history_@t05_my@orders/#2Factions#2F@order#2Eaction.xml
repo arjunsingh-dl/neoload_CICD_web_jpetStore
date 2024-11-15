@@ -1,11 +1,11 @@
 <http-page executeResourcesDynamically="false"
     forceEncodingForDynamicResources="false"
     name="/actions/Order.action" playRequestsSequentially="false"
-    recordedArtifactZipFileName="team/vus/@s03_@jpet@store_@order@history/%resources%/recorded-artifacts/52337362-305c-47c2-b8c5-fce076189480.zip"
+    recordedArtifactZipFileName="team/vus/@s03_@jpet@store_@order@history/%resources%/recorded-artifacts/802634e1-3ba8-4149-bcb7-baf240a8b277.zip"
     slaProfileEnabled="false" thinkTime="9103"
     thinkTimeMode="MODE_SIMPLE_THINK_TIME" thinkTimeRangeEnd=""
-    thinkTimeRangeStart="" uid="52337362-305c-47c2-b8c5-fce076189480">
-    <embedded-action>c98566e1-fd5d-4648-8bdb-8a5cb9b8c7b1</embedded-action>
+    thinkTimeRangeStart="" uid="802634e1-3ba8-4149-bcb7-baf240a8b277">
+    <embedded-action>497cb9f0-064e-461a-a668-82d39b6d90e4</embedded-action>
     <screenshotFileDescription>recorded-screenshots/sc_8b707d32-562e-4d3a-9c4f-fb20ecefce7f.jpg</screenshotFileDescription>
 </http-page>
 <http-action actionType="1" contentType="text/html;charset=UTF-8"
@@ -15,10 +15,10 @@
     linkExtractorSeveralMatchPolicy="1" linkExtractorType="6"
     method="GET" name="/actions/Order.action"
     path="/actions/Order.action" postType="6"
-    recordedArtifactZipFileName="team/vus/@s03_@jpet@store_@order@history/%resources%/recorded-artifacts/52337362-305c-47c2-b8c5-fce076189480.zip"
+    recordedArtifactZipFileName="team/vus/@s03_@jpet@store_@order@history/%resources%/recorded-artifacts/802634e1-3ba8-4149-bcb7-baf240a8b277.zip"
     recordedResponseCode="200" responseSize="3671"
     serverUid="petstore.octoperf.com" slaProfileEnabled="false"
-    uid="c98566e1-fd5d-4648-8bdb-8a5cb9b8c7b1" useKeepAlive="false">
+    uid="497cb9f0-064e-461a-a668-82d39b6d90e4" useKeepAlive="false">
     <responsePageFileDescription>recorded-responses/res_9dc07484-2295-4b70-9d7a-ba60a00e3c07.html</responsePageFileDescription>
     <requestContentFileDescription>recorded-requests/req_9dc07484-2295-4b70-9d7a-ba60a00e3c07.txt</requestContentFileDescription>
     <variable-extractor assertionOnNoMatch="true"

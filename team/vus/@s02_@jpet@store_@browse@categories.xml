@@ -8,7 +8,7 @@
     </init-container>
     <actions-container clearUserIterationDataMode="AUTO"
         element-number="1" execution-type="0" pacingEnd="0"
-        pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
+        pacingMode="MODE_PACING_SIMPLE" pacingStart="0" pacingValue="50"
         slaProfileEnabled="false" weightsEnabled="false">
         <description>Elements repeated until the Virtual User stops.</description>
         <weighted-embedded-action uid="b92a8506-d3d0-426f-96ac-d38015d752fd"/>
@@ -20,7 +20,6 @@
         <weighted-embedded-action uid="08ee9790-1fc1-4793-ac02-7a6e70dc53ed"/>
         <weighted-embedded-action uid="2cd32b01-d264-42bc-83f2-af8671ebcab6"/>
         <weighted-embedded-action uid="56631c15-c253-4c43-a84e-438097f0168b"/>
-        <weighted-embedded-action uid="f3e960e9-4077-4621-be3e-d9c73ca5d231"/>
     </actions-container>
     <end-container element-number="1" execution-type="0" pacingEnd="0"
         pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
@@ -29,6 +28,6 @@
     </end-container>
     <extraJsonData><![CDATA[{"browserRecordedRequestList":[]}]]></extraJsonData>
     <thinktime-policy thinkTimeMode="MODE_SIMPLE_THINK_TIME"
-        thinktimeFactorValue="100" thinktimePolicy="1"
+        thinktimeFactorValue="100" thinktimePolicy="0"
         thinktimeRangeValue="0" thinktimeValue="3000"/>
 </virtual-user>

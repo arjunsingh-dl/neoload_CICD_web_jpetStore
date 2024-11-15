@@ -17,7 +17,7 @@
     path="/actions/Order.action" postType="6"
     recordedArtifactZipFileName="team/vus/@s03_@jpet@store_@order@history/%resources%/recorded-artifacts/4583a544-2cd2-4233-ab59-cdc089953a2d.zip"
     recordedResponseCode="200"
-    refererUid="c98566e1-fd5d-4648-8bdb-8a5cb9b8c7b1"
+    refererUid="497cb9f0-064e-461a-a668-82d39b6d90e4"
     responseSize="5048" serverUid="petstore.octoperf.com"
     slaProfileEnabled="false" uid="ebe3d61c-ad00-4d66-927e-2446db308da3" useKeepAlive="false">
     <responsePageFileDescription>recorded-responses/res_f02455a6-c05a-4c5a-81c8-ba4f3ea11138.html</responsePageFileDescription>

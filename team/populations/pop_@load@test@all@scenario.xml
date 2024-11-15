@@ -17,7 +17,7 @@
             signalStrength="GOOD" uploadBandwidth="bandwidth.unlimited"
             uploadLatency="0ms" uploadPacketLoss="0%"/>
     </split>
-    <split cache="1" factor="20.0" virtualUserUid="S02_JpetStore_BrowseCategories">
+    <split cache="1" factor="30.0" virtualUserUid="S02_JpetStore_BrowseCategories">
         <browser-profile acceptEncoding="GZIP,DEFLATE,BROTLI"
             connections="6" cookies="true" http2="true" name="browser.recorded"/>
         <wan-emulation-profile
@@ -53,7 +53,7 @@
             signalStrength="GOOD" uploadBandwidth="bandwidth.unlimited"
             uploadLatency="0ms" uploadPacketLoss="0%"/>
     </split>
-    <split cache="1" factor="20.0" virtualUserUid="S04_JpetStore_Registration">
+    <split cache="1" factor="10.0" virtualUserUid="S04_JpetStore_Registration">
         <browser-profile acceptEncoding="GZIP,DEFLATE,BROTLI"
             connections="6" cookies="true" http2="true" name="browser.recorded"/>
         <wan-emulation-profile

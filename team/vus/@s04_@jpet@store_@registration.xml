@@ -8,8 +8,8 @@
     </init-container>
     <actions-container clearUserIterationDataMode="AUTO"
         element-number="1" execution-type="0" pacingEnd="0"
-        pacingMode="MODE_NO_PACING" pacingStart="0" pacingValue="0"
-        slaProfileEnabled="false" weightsEnabled="false">
+        pacingMode="MODE_PACING_SIMPLE" pacingStart="0"
+        pacingValue="200" slaProfileEnabled="false" weightsEnabled="false">
         <description>Elements repeated until the Virtual User stops.</description>
         <weighted-embedded-action uid="c07915f6-f0cd-4f0b-a9e9-228336275440"/>
         <weighted-embedded-action uid="a4f1a56c-1156-463d-8f52-c35ebbd9f10b"/>
@@ -18,6 +18,7 @@
         <weighted-embedded-action uid="644045e6-f1e2-444d-b77f-68d33148a95a"/>
         <weighted-embedded-action uid="ee41d1d6-5339-4286-b535-2eb9b897a4c9"/>
         <weighted-embedded-action uid="c220783d-e56f-46cc-be15-23420cbdd26a"/>
+        <weighted-embedded-action uid="1bb53f7c-0241-471a-a269-ad57e465c8df"/>
         <weighted-embedded-action uid="8fd7a01d-8ea1-4ca1-94d1-d5e1c9b0e129"/>
     </actions-container>
     <end-container element-number="1" execution-type="0" pacingEnd="0"
