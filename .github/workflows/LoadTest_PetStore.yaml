@@ -6,7 +6,7 @@ jobs:
   test:
     environment: STAGE
     name: LoadTest_PetStore
-    runs-on: [windows-latest]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Get current date
         id: date
