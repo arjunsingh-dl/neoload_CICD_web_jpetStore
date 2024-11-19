@@ -1,44 +1,35 @@
+name: LoadTest_PetStore
+on:
+  workflow_dispatch:
+ 
 jobs:
-  build:
-    runs-on: windows-latest
- 
+  test:
+    environment: STAGE
+    name: LoadTest_PetStore
+    runs-on: [windows-latest]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
- 
-      - name: Set Date
+      - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(Get-Date -Format 'yyyy-MM-dd')"
-        shell: pwsh
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
  
       - name: Load Test for Petstore
         uses: arjunsingh-dl/Main@v0.02
         env:
           NEOLOADWEB_URL: 'https://neoload-api.saas.neotys.com/'
           WORKSPACE: 'Default Workspace'
-          NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN }}
+          NEOLOADWEB_TOKEN: ${{ secrets.NEOLOADWEB_TOKEN}}
           ZONEID: 'APSAWS'
-          NUM_G: 1
+          NUM_GENS: 1
           SCENARIO: LoadTest_PetStore
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
           TEST: New
           TEST_NAME: Load_CICD_jPetStore_10User_${{ steps.date.outputs.date }}_${{ github.run_number }}
- 
+          
       - name: Success - Test
         id: Status
         if: ${{ success() }}
-        run: echo "TestStatus=Passed `n" >> $env:GITHUB_OUTPUT
-        shell: pwsh
- 
-      - name: Failure - Test
-        id: StatusFailure
-        if: ${{ failure() }}
-        run: echo "TestStatus=Failed `n" >> $env:GITHUB_OUTPUT
-        shell: pwsh
- 
-      - name: Result - Fetching
-        id: StoringResponse
         run: |
+          echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
           # Fetch the latest test result from Neoload Web
           $response = Invoke-RestMethod -Uri "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0" -Headers @{accept="application/json"; accountToken="${{ secrets.NEOLOADWEB_TOKEN }}"}
           # Store the response in a file
@@ -58,23 +49,17 @@ jobs:
         id: fetch-record-link
         run: |
           # Ensure the directory exists
-          $downloadPath = "$env:USERPROFILE\\Downloads"
-          if (-not (Test-Path -Path $downloadPath)) {
-            New-Item -ItemType Directory -Force -Path $downloadPath
-          }
+          New-Item -ItemType Directory -Force -Path $env:USERPROFILE\Downloads
           # Access the first record's id from the environment variable
           $first_record_id = $env:Test_Result_Id
           # Use the record ID in another curl command to get the link
-          $pdfPath = "$downloadPath\\record.pdf"
-          Write-Host "Downloading PDF to $pdfPath"
-          curl -o $pdfPath -X POST "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report" -H "accept: application/pdf" -H "accountToken: ${{ secrets.NEOLOADWEB_TOKEN }}" -H "Content-Type: application/json" -d "{\"language\": \"en\",\"timeZone\": \"Europe/Paris\"}"
+          Invoke-RestMethod -Uri "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report" -Method Post -Headers @{accept="application/pdf"; accountToken="${{ secrets.NEOLOADWEB_TOKEN }}"; "Content-Type"="application/json"} -Body '{"language": "en","timeZone": "Europe/Paris"}' -OutFile $env:USERPROFILE\Downloads\record.pdf
         shell: pwsh
  
       - name: Check Downloaded PDF
         run: |
           # Check if the PDF was downloaded successfully
-          $pdfPath = "$env:USERPROFILE\\Downloads\\record.pdf"
-          if (Test-Path $pdfPath) {
+          if (Test-Path $env:USERPROFILE\Downloads\record.pdf) {
             echo "PDF downloaded successfully."
           } else {
             echo "Failed to download PDF."
@@ -83,7 +68,21 @@ jobs:
         shell: pwsh
  
       - name: Upload PDF as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: record
-          path: ${{ env.USERPROFILE }}\Downloads\record.pdf
+          path: $env:USERPROFILE\Downloads\record.pdf
+          
+      - name: Failure - Test
+        id: StatusFailure
+        if: ${{ failure() }}
+        run: |
+          echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
+ 
+ 
+      - name: GetTestEndTime
+        id: EndTime
+        if: always()
+        run: |
+          echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
+          echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
