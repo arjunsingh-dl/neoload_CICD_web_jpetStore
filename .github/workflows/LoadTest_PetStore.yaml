@@ -91,17 +91,3 @@ jobs:
         with:
           name: record
           path: ${{ env.USERPROFILE }}\Downloads\record.pdf
-          
-      - name: Failure - Test
-        id: StatusFailure
-        if: ${{ failure() }}
-        run: |
-          echo "TestStatus=Failed \n" >> $GITHUB_OUTPUT
- 
- 
-      - name: GetTestEndTime
-        id: EndTime
-        if: always()
-        run: |
-          echo "vEndTime=$(date +'%s000')" >> $GITHUB_OUTPUT
-          echo "sEndTime=$(date +'%s')" >> $GITHUB_OUTPUT
