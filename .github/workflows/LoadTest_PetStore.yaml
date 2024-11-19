@@ -53,13 +53,13 @@ jobs:
           # Access the first record's id from the environment variable
           $first_record_id = $env:Test_Result_Id
           # Use the record ID in another curl command to get the link
-          Invoke-RestMethod -Uri "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report" -Method Post -Headers @{accept="application/pdf"; accountToken="${{ secrets.NEOLOADWEB_TOKEN }}"; "Content-Type"="application/json"} -Body '{"language": "en","timeZone": "Europe/Paris"}' -OutFile $env:USERPROFILE\Downloads\record.pdf
+          Invoke-RestMethod -Uri "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results/$first_record_id/report" -Method Post -Headers @{accept="application/pdf"; accountToken="${{ secrets.NEOLOADWEB_TOKEN }}"; "Content-Type"="application/json"} -Body '{"language": "en","timeZone": "Europe/Paris"}' -OutFile $env:USERPROFILE/Downloads/record.pdf
         shell: pwsh
  
       - name: Check Downloaded PDF
         run: |
           # Check if the PDF was downloaded successfully
-          if (Test-Path $env:USERPROFILE\Downloads\record.pdf) {
+          if (Test-Path $env:USERPROFILE/Downloads/record.pdf) {
             echo "PDF downloaded successfully."
           } else {
             echo "Failed to download PDF."
@@ -71,7 +71,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: record
-          path: $env:USERPROFILE\Downloads\record.pdf
+          path: $env:USERPROFILE/Downloads/record.pdf
           
       - name: Failure - Test
         id: StatusFailure
