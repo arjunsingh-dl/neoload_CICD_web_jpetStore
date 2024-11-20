@@ -68,10 +68,10 @@ jobs:
         shell: pwsh
  
       - name: Upload PDF as Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: record
-          path: $env:USERPROFILE\Downloads\record.pdf
+          path: ${{ env.USERPROFILE }}\Downloads\record.pdf
           
       - name: Failure - Test
         id: StatusFailure
