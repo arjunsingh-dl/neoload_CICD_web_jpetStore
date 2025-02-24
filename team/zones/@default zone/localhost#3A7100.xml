@@ -1,10 +1,56 @@
 <lg-host browserBasedSupport="false" citrixSupport="false"
     hostname="localhost:7100" loadWeight="1" sapSupport="false"
     standalone="false" supportWANEmulation="false"
-    uid="122e11b9-def0-4a19-bd3c-5dc814554a2c" version="2024.2.0;build=20240606-37">
+    uid="122e11b9-def0-4a19-bd3c-5dc814554a2c" version="2024.4.0 beta JDK21;build=20250128-28">
     <!--****** LG NETWORK INTERFACES ******-->
+    <lg-networkiface
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter-Native WiFi Filter Driver-0000"
+        enabled="false" isLoopBack="false" name="wireless_2">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter-Virtual WiFi Filter Driver-0000"
+        enabled="false" isLoopBack="false" name="wireless_1">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000"
+        enabled="false" isLoopBack="false" name="wireless_4">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter-QoS Packet Scheduler-0000"
+        enabled="false" isLoopBack="false" name="wireless_3">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface description="Realtek USB GbE Family Controller"
+        enabled="false" isLoopBack="false" name="ethernet_32770">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface description="Microsoft Teredo Tunneling Adapter"
+        enabled="false" isLoopBack="false" name="tunnel_32512">
+        <!--****** LG ADDRESSES ******-->
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter"
+        enabled="false" isLoopBack="false" name="wireless_32768">
+        <!--****** LG ADDRESSES ******-->
+        <lg-address enabled="false" hostname="uskolarjunksin9.us.deloitte.com">
+            <ip value="10.12.148.61"/>
+        </lg-address>
+        <lg-address enabled="false" hostname="fe80:0:0:0:5976:f645:5a94:29c5%wireless_32768">
+            <ip value="fe80:0:0:0:5976:f645:5a94:29c5%wireless_32768"/>
+        </lg-address>
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
     <lg-networkiface description="Software Loopback Interface 1"
-        enabled="false" isLoopBack="true" name="lo">
+        enabled="false" isLoopBack="true" name="loopback_0">
         <!--****** LG ADDRESSES ******-->
         <lg-address enabled="false" hostname="127.0.0.1">
             <ip value="127.0.0.1"/>
@@ -15,23 +61,17 @@
         <!--****** END LG ADDRESSES ******-->
     </lg-networkiface>
     <lg-networkiface
-        description="Bluetooth Device (Personal Area Network)"
-        enabled="false" isLoopBack="false" name="eth4">
+        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter-WFP Native MAC Layer LightWeight Filter-0000"
+        enabled="false" isLoopBack="false" name="wireless_0">
         <!--****** LG ADDRESSES ******-->
-        <lg-address enabled="false" hostname="fe80:0:0:0:6d46:968e:8b0d:7b98%eth4">
-            <ip value="fe80:0:0:0:6d46:968e:8b0d:7b98%eth4"/>
-        </lg-address>
         <!--****** END LG ADDRESSES ******-->
     </lg-networkiface>
     <lg-networkiface
-        description="MediaTek Wi-Fi 6E MT7922 (RZ616) 160MHz PCIe Adapter"
-        enabled="false" isLoopBack="false" name="wlan2">
+        description="Bluetooth Device (Personal Area Network)"
+        enabled="false" isLoopBack="false" name="ethernet_32769">
         <!--****** LG ADDRESSES ******-->
-        <lg-address enabled="false" hostname="uskolarjunksin9.us.deloitte.com">
-            <ip value="10.12.148.117"/>
-        </lg-address>
-        <lg-address enabled="false" hostname="fe80:0:0:0:5976:f645:5a94:29c5%wlan2">
-            <ip value="fe80:0:0:0:5976:f645:5a94:29c5%wlan2"/>
+        <lg-address enabled="false" hostname="fe80:0:0:0:6d46:968e:8b0d:7b98%ethernet_32769">
+            <ip value="fe80:0:0:0:6d46:968e:8b0d:7b98%ethernet_32769"/>
         </lg-address>
         <!--****** END LG ADDRESSES ******-->
     </lg-networkiface>
