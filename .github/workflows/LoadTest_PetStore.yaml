@@ -24,14 +24,3 @@ jobs:
           AS_CODE: 'custom-resources/yaml/LoadTest_PetStore.yaml'
           TEST: New
           TEST_NAME: Load_CICD_jPetStore_10User_${{ steps.date.outputs.date }}_${{ github.run_number }}
-          
-      - name: Success - Test
-        id: Status
-        if: ${{ success() }}
-        run: |
-          echo "TestStatus=Passed \n" >> $GITHUB_OUTPUT
-          # Fetch the latest test result from Neoload Web
-          $response = Invoke-RestMethod -Uri "https://neoload-api.saas.neotys.com/v3/workspaces/${{ secrets.WORKSPACE_ID }}/test-results?limit=50&offset=0" -Headers @{accept="application/json"; accountToken="${{ secrets.NEOLOADWEB_TOKEN }}"}
-          # Store the response in a file
-          $response | ConvertTo-Json | Out-File -FilePath response.json
-        shell: pwsh
